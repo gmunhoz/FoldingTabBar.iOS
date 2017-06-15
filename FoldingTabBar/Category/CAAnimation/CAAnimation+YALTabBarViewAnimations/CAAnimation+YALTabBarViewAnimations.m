@@ -80,18 +80,18 @@
     rotation.duration = kYALCenterButtonExpandAnimationParameters.rotation.duration;
     rotation.fillMode = kCAFillModeForwards;
     rotation.removedOnCompletion = NO;
-    
+
     YALSpringAnimation *bouncedRotation = [self rotationBouncedAnimationFromValue:kYALCenterButtonExpandAnimationParameters.bounce.fromValue
                                                                           toValue:kYALCenterButtonExpandAnimationParameters.bounce.toValue];
     bouncedRotation.beginTime = kYALCenterButtonExpandAnimationParameters.bounce.beginTime;
-    
+
     return [self groupWithAnimations:@[rotation, bouncedRotation] andDuration:kYALExpandAnimationDuration];
 }
 
 + (CAAnimation *)animationForCenterButtonCollapse {
     CABasicAnimation *rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotation.fromValue = @(kYALCenterButtonCollapseAnimationParameters.rotation.fromValue);
-    rotation.toValue = @(kYALCenterButtonCollapseAnimationParameters.rotation.toValue);
+    rotation.fromValue = @(kYALCenterButtonCollapseAnimationParameters.rotation.toValue);
+    rotation.toValue = @(kYALCenterButtonCollapseAnimationParameters.rotation.fromValue);
     rotation.duration = kYALCenterButtonCollapseAnimationParameters.rotation.duration;
     rotation.fillMode = kCAFillModeForwards;
     rotation.removedOnCompletion = NO;
@@ -99,7 +99,7 @@
     YALSpringAnimation *bouncedRotation = [self rotationBouncedAnimationFromValue:kYALCenterButtonCollapseAnimationParameters.bounce.fromValue
                                                                           toValue:kYALCenterButtonCollapseAnimationParameters.bounce.toValue];
     bouncedRotation.beginTime = kYALCenterButtonCollapseAnimationParameters.bounce.beginTime;
-    
+
     return [self groupWithAnimations:@[rotation, bouncedRotation] andDuration:kYALExpandAnimationDuration];
 }
 

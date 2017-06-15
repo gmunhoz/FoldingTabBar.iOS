@@ -56,16 +56,16 @@ YALAnimationParameters const kYALTabBarCollapseAnimationParameters = (YALAnimati
 };
 
 YALCenterButtonAnimationsParameters const kYALCenterButtonExpandAnimationParameters = (YALCenterButtonAnimationsParameters) {
-    .rotation = (YALAnimationParameters) {
-        .duration = kYALExpandAnimationDuration / 4.0,
-        .fromValue = 0.0,
-        .toValue = M_PI * 2.0 + 45.0 * kDegreeToRadiansRatio
-    },
-    .bounce = (YALAnimationParameters) {
-        .beginTime = kYALExpandAnimationDuration / 4.0,
-        .fromValue = 45.0 * kDegreeToRadiansRatio + M_PI / 8.0,
-        .toValue = 45.0 * kDegreeToRadiansRatio
-    }
+        .rotation = (YALAnimationParameters) {
+                .duration = kYALExpandAnimationDuration / 4.0,
+                .fromValue = 0.0,
+                .toValue = M_PI * 2.0 * 1.0
+        },
+        .bounce = (YALAnimationParameters) {
+                .beginTime = kYALExpandAnimationDuration / 4.0,
+                .fromValue = M_PI / 8.0,
+                .toValue = 0.0
+        }
 };
 
 YALCenterButtonAnimationsParameters const kYALCenterButtonCollapseAnimationParameters = (YALCenterButtonAnimationsParameters) {
