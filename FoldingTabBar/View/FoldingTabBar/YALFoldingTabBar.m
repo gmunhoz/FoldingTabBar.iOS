@@ -536,7 +536,11 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
         [self animateTabBarViewExpand];
         [self hideExtraLeftTabBarItem];
         [self hideExtraRightTabBarItem];
-        [self animateCenterButtonExpand];
+
+        if (self.animateCenterButton) {
+            [self animateCenterButtonExpand];
+        }
+
         [self animateAdditionalButtons];
         [self showSelectedDotView];
     } andCompletion:^{
@@ -564,7 +568,11 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
         [self animateTabBarViewCollapse];
         [self showExtraLeftTabBarItem];
         [self showExtraRightTabBarItem];
-        [self animateCenterButtonCollapse];
+
+        if (self.animateCenterButton) {
+            [self animateCenterButtonCollapse];
+        }
+
         [self hideSelectedDotView];
         [self animateAdditionalButtons];
     } andCompletion:^{

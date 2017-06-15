@@ -60,6 +60,7 @@ typedef NS_ENUM(NSUInteger, YALTabBarState) {
 @property (nonatomic, assign) UIEdgeInsets tabBarItemsEdgeInsets;
 @property (nonatomic, assign) CGFloat extraTabBarItemHeight;
 @property (nonatomic, assign) CGFloat offsetForExtraTabBarItems;
+@property (nonatomic, assign) BOOL animateCenterButton;
 
 - (void)changeExtraLeftTabBarItemWithImage:(UIImage * _Nullable)image;
 - (void)changeExtraRightTabBarItemWithImage:(UIImage * _Nullable)image;
